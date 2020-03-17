@@ -1,0 +1,123 @@
+.background {
+    background-color: #282c34;
+    
+}
+
+pre {
+    color: #28a745;
+}
+
+#Register {
+    background: white;
+    display: inline-block;
+    border-style: 10px, solid, black;
+    border-width: 1px;
+    padding: 5px;
+    width: 48%;
+    margin: 1%;
+}
+
+#Login {
+    background: white;
+    display: inline-block;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+    width: 48%;
+    margin: 1%;
+}
+
+footer {
+    color: #28a745;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+  }
+
+#warning {
+    color: red;
+    margin-left: 100px;
+  }
+
+#menue {
+    background-color: black;
+}
+
+#menue p1 {
+    color: #28a745;
+    display: inline-block;
+    border-width: 1px;
+    padding: 5px;
+    width: 15%;
+    margin: 1%;
+}
+
+#menue p2 {
+    color: #28a745;
+    display: inline-block;
+    border-width: 1px;
+    padding: 5px;
+    width: 15%;
+    margin: 1%;
+}
+
+#square1 {
+    background-color: white;
+    display: inline-block;
+    padding: 5px;
+    margin: 1%;
+    height: 5%;
+    width: 15%;
+}
+
+#square2 {
+    background-color: white;
+    display: inline-block;
+    padding: 5px;
+    margin: 1%;
+    height: 5%;
+    width: 15%;
+
+}
+
+#square3 {
+    display: inline-block;
+    background-color: white;
+    padding: 5px;
+    margin: 1%;
+    height: 5%;
+    width: 15%;
+}
+
+#square4 {
+    display: inline-block;
+    background-color: white;
+    padding: 5px;
+    margin: 1%;
+    height: 5%;
+    width: 15%;
+}
+
+#square5 {
+    background-color: white;
+    padding: 5px;
+    margin: 1%;
+    height: 40%;
+    width: 34.5%;
+}
+
+#square6 {
+    background-color: white;
+    margin: 1%;
+    width: 34.5%;
+}
+
+#Calculator {
+    background: white;
+    display: inline-block;
+    border-style: 10px, solid, black;
+    border-width: 1px;
+    padding: 5px;
+    margin: 1%;
+}

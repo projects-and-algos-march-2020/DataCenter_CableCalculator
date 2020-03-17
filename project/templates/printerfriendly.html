@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    <title>PrinterFriendly</title>
+</head>
+<body>
+    <div>
+        <p1> Hello: {{ user.username }} | <a href="edit">Edit User</a></p1>
+        <p1><a href="menu">| Home Page |</a></p1>
+        <p2><a href="logout"> Logout</a></p2>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td><b>Complete</b></td>
+                <td><b>Brick Position</b></td>
+                <td><b>Rack Position</b></td>
+                <td><b>Fiber Length</b></td>
+                <td><b>Cables Needed</b></td>
+                <td><b>Created At</b></td>
+                <td><b>Notes</b></td>
+            </tr>
+        </thead>
+        <thead>  
+            {% for x in cable %}          
+            <tr>
+                <td>&#9744;</td>                
+                <td>{{x["brick_position"]}}</td>
+                <td>{{x["rack_position"]}}</td> 
+                <td>{{x["fiber_length"]}} meters</td> 
+                <td>{{x["number_cable"]}}</td> 
+                <td>{{x["created_at"]}}</td> 
+                <td>________________________________________________________</td>
+            </tr>   
+            {% endfor %}      
+        </thead>
+    </table>    
+</body>
+</html>

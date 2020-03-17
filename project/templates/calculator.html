@@ -1,0 +1,58 @@
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Calculator</title>
+</head>
+<body class=background>
+    <div id="menue">
+        <p1> Hello: {{ user.username }} | <a href="edit">Edit User</a></p1>
+        <p1><a href="menu">Home Page</a></p1>
+        <p2><a href="logout">Logout</a></p2>
+    </div>
+    <h1 style="color: #28a745">Calculator / Work Generator</h1>
+    <div id='Calculator'>
+        <form action='/math' , method='POST'>
+            <label>Rack Position</label>
+            <input type="number" class="form-control" name="RP" placeholder="Ex 1116">
+            <label>Brick Position</label>
+            <input type="number" class="form-control" name="BP" placeholder="Ex 1116">
+            <label>Cables Needed</label>
+            <input type="number" class="form-control" name="CA" placeholder="Ex 1116">
+            <label>Or just Paste System String</label>
+            <input type="text" class="form-control" name="ST" placeholder="Position: 1116, Brick: 1117, 25X8">
+            <input type='submit' class="btn btn-success" value='Calculate'> 
+        </form>
+    </div>
+    <p><a style="padding: 20px" href="/print_friendly">printer friendly view</a></p>
+    <div id="square6">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td><b>Brick Position</b></td>
+                    <td><b>Rack Position</b></td>
+                    <td><b>Fiber Length</b></td>
+                    <td><b>Cables Needed</b></td>
+                    <td><b>Created At</b></td>
+                    <td><b>Edit</b></td>
+                </tr>
+            </thead>
+            <thead>  
+                {% for x in cable %}          
+                <tr>                
+                    <td>{{x["brick_position"]}}</td>
+                    <td>{{x["rack_position"]}}</td> 
+                    <td>{{x["fiber_length"]}} meters</td> 
+                    <td>{{x["number_cable"]}}</td> 
+                    <td>{{x["created_at"]}}</td>
+                    <td><a href="/delete_cable/{{x["id"]}}">Delete</a></td> 
+                </tr>   
+                {% endfor %}      
+            </thead>
+        </table>    
+    </div>
+</body>
+</html>

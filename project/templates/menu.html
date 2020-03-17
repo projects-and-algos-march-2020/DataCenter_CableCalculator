@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Main_Menu</title>
+</head>
+<body class=background>
+    <div id="menue">
+        <p1> Hello: {{ user.username }} | <a href="edit">Edit User</a></p1>
+        <p1><a href="menu">Home Page</a></p1>
+        <p2><a href="logout">Logout</a></p2>
+    </div>
+    <div>
+        <div id="square1">
+            <h4>Calculate Length</h4>
+            <p>Calculate fiber/Copper cable and create daily worksheet</p>
+            <form action="/calculator">
+                <input class="btn btn-success" type="submit" value="Calculator" />
+            </form>
+        </div>
+        <div id="square2">
+            <h4>Add/Edit DataCenter</h4>
+            <p>Create Datacenter templates, edit existing Datacenters or make tweaks</p>
+            <form action="/datacenter_editor">
+                <input class="btn btn-success" type="submit" value="Edit/Create" />
+            </form>
+        </div>
+    </div>
+    <div>
+        <div id="square3">
+            <h4>Work/history by date</h4>
+            <p>View work history by date</p>
+            <form>
+                <input type="date" id="start" name="date"
+                value="today"
+               >
+            </form>
+        </div>
+        <div id="square4">
+            <h4>Inventory</h4>
+            <p>Add current supplies on hand (coming soon)</p>
+            <form action="/menu">
+                <input class="btn btn-success" type="submit" value="Edit/Create" />
+            </form>
+        </div>
+    </div>
+    <a style="padding: 20px" href="/print_friendly">printer friendly view</a>
+    <div id="square5">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td><b>Brick Position</b></td>
+                    <td><b>Rack Position</b></td>
+                    <td><b>Fiber Length</b></td>
+                    <td><b>Cables Needed</b></td>
+                    <td><b>Created At</b></td>
+                </tr>
+            </thead>
+            <thead>  
+                {% for x in cable %}          
+                <tr>                
+                    <td>{{x["brick_position"]}}</td>
+                    <td>{{x["rack_position"]}}</td> 
+                    <td>{{x["fiber_length"]}} meters</td> 
+                    <td>{{x["number_cable"]}}</td> 
+                    <td>{{x["created_at"]}}</td> 
+                </tr>   
+                {% endfor %}      
+            </thead>
+        </table>    
+    </div>
+    
+</body>
+</html>

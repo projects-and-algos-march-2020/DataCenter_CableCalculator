@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Edit User</title>
+</head>
+<body class=background>
+    <div id="menue">
+        <p1> Hello: {{ user.username }} | <a href="edit">Edit User</a></p1>
+        <p1><a href="menu">Home Page</a></p1>
+        <p2><a href="logout">Logout</a></p2>
+    </div>
+    <div id="square1">
+        <h1>Editing: {{ user.username }}</h1>
+        <ul>
+            <li>id: {{ user.id }}</li>
+            <li>username: {{ user.username }}</li>
+            <li>created_at: {{ user.created_at }}</li>
+        </ul>
+    </div>
+    <form action="/delete_user/{{"user.id"}}">
+        <input class="btn btn-danger" type="submit" value="Delete_user" />
+    </form>
+</body>
+</html>

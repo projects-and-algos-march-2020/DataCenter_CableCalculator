@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Cable_Calculator_LogIn</title>
+</head>
+<body class=background>
+    <h4><pre>
+         ______      __    __        ______      __           __      __ 
+        / ____/___ _/ /_  / /__     / ____/___ _/ /______  __/ /___ _/ /_____  _____
+       / /   / __ `/ __ \/ / _ \   / /   / __ `/ / ___/ / / / / __ `/ __/ __ \/ ___/
+      / /___/ /_/ / /_/ / /  __/  / /___/ /_/ / / /__/ /_/ / / /_/ / /_/ /_/ / / 
+      \____/\__,_/_.___/_/\___/   \____/\__,_/_/\___/\__,_/_/\__,_/\__/\____/_/ 
+    </pre></h4>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <h5 id='warning'>{{message}}</h5>
+        {% endfor %}
+     {% endif %}
+{% endwith %}
+    <div id='Register'>
+        <h4>Make_User:</h4>
+        <form action='/add' , method='POST'>
+            <label>Username</label>
+            <input type="text" class="form-control" name="UN" placeholder="Username">
+            <label>Password</label>
+            <input type="password" class="form-control" name="PW" placeholder="Password">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" name="Confirm_PW" placeholder="Confirm Password">
+            <input type='submit' class="btn btn-success" value='Register'>
+        </form>
+    </div>
+    <div id='Login'>
+        <h4>Log_In:</h4>
+        <form action="/login" , method="POST">
+            <label>Username</label>
+            <input type="text" class="form-control" name="UN" placeholder="Username">
+            <label>Password</label>
+            <input type="password" class="form-control" name="PW" placeholder="Password">
+            <input type='submit' class="btn btn-success" value='Log In'>
+        </form>
+    </div>
+    <footer>
+        <p>Email Tomas | Contact information: <a href="fake@email.com">fake@email.com</a></p>
+      </footer>
+</body>
+</html>
